@@ -14,6 +14,12 @@ function getElements(response, amount, destCurrency) {
     $('.showErrors').text(`There was an error: ${response.message}`);
   }
 }
+
+async function makeApiCall(srcCurrency) {
+  let apires= await Currency.currencyExchange(srcCurrency);
+  return apires;
+}
+
 $(document).ready(function() {
   $("#currBtn").click(function() {
     let srcCurrency = $("#sourceCurrency").val();
@@ -22,7 +28,9 @@ $(document).ready(function() {
     console.log("destCurrency" +destCurrency)
     let amount = $("#amount").val();
     console.log("amount" +amount)
-    Currency.currencyExchange(srcCurrency).then(function(response) {
+    let response=makeApiCall(srcCurrency);
+    // Currency.currencyExchange(srcCurrency)
+    // .then(function(response) {
       getElements(response, amount, destCurrency);
 
     });
@@ -30,4 +38,4 @@ $(document).ready(function() {
 
   });
 
-});
+
