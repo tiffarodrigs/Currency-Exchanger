@@ -6,17 +6,19 @@
   <body>
  
 
-    <input type="text">
+    <input type="text" id="amount">
     <select name="sourceCurrency" id="sourceCurrency">
-        <option value="USA" required>US - US Dollar</option>
+        <option value="USD" required>USD - US Dollar</option>
         <option value="AUD">AUD - Australian Dollar</option>
         <option value="CAD">CAD - Canadian Dollar</option>
     </select>
     <select name="destinationCurrency" id="destinationCurrency">
-      <option value="USA" >US - US Dollar</option>
+      <option value="USD" >USD - US Dollar</option>
       <option value="AUD" required>AUD - Australian Dollar</option>
       <option value="CAD">CAD - Canadian Dollar</option>
   </select>
   <button type="button"id="currBtn">submit</button>
+  <div id="outputAmount"></div>
+  <div class="showErrors"></div>
   </body>
 </html>
