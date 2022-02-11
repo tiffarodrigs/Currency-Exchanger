@@ -5,14 +5,16 @@ import './css/styles.css';
 import Currency from "./js/currency.js";
 
 function getElements(response, amount, destCurrency) {
-  if (response.conversion_rates) {
-    let output = response.conversion_rates[destCurrency] * amount;
-    console.log(output);
-
-    // $('.showHumidity').text(`The humidity in ${response.name} is ${response.main.humidity}%`);
-  } else {
-    $('.showErrors').text(`There was an error: ${response.message}`);
-  }
+  response.then(function(res) {
+    if (res.result==="success") {
+      let output = res.conversion_rates[destCurrency] * amount;
+      $('#outputAmount').text(output)
+    } else {
+      console.log(res)
+      $('.showErrors').text(`There was an error: ${res}`);
+    }
+  })
+  
 }
 
 async function makeApiCall(srcCurrency) {
@@ -23,19 +25,11 @@ async function makeApiCall(srcCurrency) {
 $(document).ready(function() {
   $("#currBtn").click(function() {
     let srcCurrency = $("#sourceCurrency").val();
-    console.log("srcCurrency" +srcCurrency)
     let destCurrency = $("#destinationCurrency").val();
-    console.log("destCurrency" +destCurrency)
     let amount = $("#amount").val();
-    console.log("amount" +amount)
     let response=makeApiCall(srcCurrency);
-    // Currency.currencyExchange(srcCurrency)
-    // .then(function(response) {
-      getElements(response, amount, destCurrency);
-
+    getElements(response, amount, destCurrency);
     });
-
-
   });
 
 
