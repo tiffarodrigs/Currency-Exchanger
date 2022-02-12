@@ -5,42 +5,22 @@
   </head>
   <body>
     <div class="container">
+      <div><h1>Currency Converter</h1></div>
       <div class="row">
         <div class="col-sm">
-        <!-- <input type="number" id="amount" class="form-control"/> -->
-
         <div class="input-group mb-3">
           <div class="input-group-prepend">
             <span class="input-group-text" id="currencyCode">$</span>
           </div>
-          <input type="text" class="form-control" id="amount" aria-label="Amount (to the nearest dollar)" placeholder="Enter Value">
+          <input type="text" class="form-control" id="amount"  aria-label="Amount (to the nearest dollar)" placeholder="Enter Value" required>
         </div>
-
-      </div>
-      
-      
+      </div>    
         <div class="col-sm">
         <select name="sourceCurrency" id="sourceCurrency" class="custom-select">
-          <!-- <option value="USD" required>USD - US Dollar</option>
-          <option value="AUD">AUD - Australian Dollar</option>
-          <option value="CAD">CAD - Canadian Dollar</option>
-          <option value="INR">INR - Indian Rupee</option>
-          <option value="JPY">JPY - Japanese Yen</option>
-          <option value="gggg">ggg</option> -->
         </select>
       </div>
       <div class="col-sm">
-        <select
-          name="destinationCurrency"
-          id="destinationCurrency"
-          class="custom-select"
-        >
-          <!-- <option value="USD">USD - US Dollar</option>
-          <option value="AUD" required>AUD - Australian Dollar</option>
-          <option value="CAD">CAD - Canadian Dollar</option>
-          <option value="INR">INR - Indian Rupee</option>
-          <option value="JPY">JPY - Japanese Yen</option>
-          <option value="gggg">ggg</option> -->
+        <select name="destinationCurrency"id="destinationCurrency"class="custom-select"></select>
         </select>
       </div>
     </div>
