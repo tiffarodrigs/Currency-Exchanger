@@ -6,31 +6,47 @@
   <body>
     <div class="container">
       <div class="row">
-        <input type="number" id="amount" />
+        <div class="col-sm">
+        <!-- <input type="number" id="amount" class="form-control"/> -->
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="currencyCode">$</span>
+          </div>
+          <input type="text" class="form-control" id="amount" aria-label="Amount (to the nearest dollar)" placeholder="Enter Value">
+        </div>
+
+      </div>
+      
+      
+        <div class="col-sm">
         <select name="sourceCurrency" id="sourceCurrency" class="custom-select">
-          <option value="USD" required>USD - US Dollar</option>
+          <!-- <option value="USD" required>USD - US Dollar</option>
           <option value="AUD">AUD - Australian Dollar</option>
           <option value="CAD">CAD - Canadian Dollar</option>
           <option value="INR">INR - Indian Rupee</option>
           <option value="JPY">JPY - Japanese Yen</option>
-
-          <option value="gggg">ggg</option>
+          <option value="gggg">ggg</option> -->
         </select>
+      </div>
+      <div class="col-sm">
         <select
           name="destinationCurrency"
           id="destinationCurrency"
           class="custom-select"
         >
-          <option value="USD">USD - US Dollar</option>
+          <!-- <option value="USD">USD - US Dollar</option>
           <option value="AUD" required>AUD - Australian Dollar</option>
           <option value="CAD">CAD - Canadian Dollar</option>
           <option value="INR">INR - Indian Rupee</option>
           <option value="JPY">JPY - Japanese Yen</option>
-          <option value="gggg">ggg</option>
+          <option value="gggg">ggg</option> -->
         </select>
-        <button type="button" id="currBtn">submit</button>
-        <div id="output"></div>
       </div>
+    </div>
+    <div>
+    <div id="output"></div>
+    </div>
     </div>
   </body>
 </html>
